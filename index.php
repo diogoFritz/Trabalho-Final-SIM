@@ -10,9 +10,8 @@
 
     <!--
     Criar 4 perfis: medico/admin/investigador/paciente
-
- 
-    
+    evitar usar o GET, usar post 
+    criar bem vindo para cada perfil
     -->
 
     <style>
@@ -30,9 +29,11 @@
            // $_SESSION['authuser'];
         }
         if(isset($_SESSION['perfil']) == false ) {
-            $_SESSION['perfil']="admin";
+            $_SESSION['perfil']="Guest";
+            $perfil = $_SESSION['perfil'];  
+        }
+        else {
             $perfil = $_SESSION['perfil'];
-            
         }
 
         if(isset($_GET['option'])==false){
@@ -55,22 +56,24 @@
         </tr>
 
         <tr>
-            <td style="border:2px solid grey;font-size: 30px;text-align: center;width: 20%;">
+            <td style="border:2px solid grey;font-size: 1em;text-align: center;width: 30%;">
                 <ul style="list-style-type: none;">
                     <?php
                     // Menu para 4 perfis
-                    echo "<h3>Menu $perfil</h3>";
+                    echo "<h3>Menu</h3>";
                     echo '<hr>';
 
                     echo  "<li><a href='index.php?option=homepage'>Homepage</a></li>";
-                    echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
-
-                    if( $_SESSION['authuser'] == 1)
-                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=10'>Tabelas</a></li>";
                     
+
+                    if( $_SESSION['authuser'] == 1){
+                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=10'>Tabelas</a></li>";
+                        
+                    }
                     if( $_SESSION['perfil'] == 'Guest') {
                         echo  "<li><a href='index.php?option=signin'>Sign In</a></li>";
                         echo  "<li><a href='index.php?option=register'>Registar Utente</a></li>";
+                        
                     }
 
                     if( $_SESSION['perfil'] == 'admin') {
@@ -79,21 +82,25 @@
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
+                        echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {
                         echo  "<li><a href='index.php?option=homepage'>Consultar Dados dos Utilizadores (ID,nome,idade e Perfil)</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Registo da consulta Médica</a></li>";
+                        echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
 
                     }
                     if( $_SESSION['perfil'] == 'investigador') {
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Investigador</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Consultar Dados anónimos e/ou Gráficos</a></li>";
+                        echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
-                    if( $_SESSION['perfil'] == 'utente') {
+                    if( $_SESSION['perfil'] == 'paciente') {
                         echo  "<li><a href='index.php?option=homepage'>Consulta Médica</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
+                        echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
   
                     ?>
@@ -105,7 +112,7 @@
                 // condicao do GET homepage or loginForm
 
                 switch($option){
-                    case 'homepage': include('homepage.html'); break;
+                    case 'homepage': include('homepage.php'); break;
                     case 'signin' : include('loginForm.php'); break;
                     case 'register': include('signForm.php'); break;
                     case 'tabela' : 
@@ -119,7 +126,7 @@
                         break;
                     case 'checklogin' :   include('checklogin.php')   ; break;
                     case 'checkregister': include('checkRegister.php');break;
-                    case 'logoff' :  echo "Terminar sessão..."; session_unset(); break;
+                    case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
                 }
             
             ?>
