@@ -20,6 +20,28 @@
             padding:0;
         }
 
+        .inline {
+            display: inline;
+        }
+
+        .link-button {
+            background: none;
+            border: none;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: serif;
+        }
+
+        .link-button:focus {
+         outline: none;
+        }
+
+        .link-button:active {
+            color:red;
+        }
+
     </style>
     <?php 
         session_start();
@@ -51,7 +73,7 @@
         <tr>
             <td><img src="assets\data.png" alt="logo"></td>
             <td> 
-                <h1 style="text-align: center; font-family: 'Brush Script MT', cursive"><strong>Covid Cure Center - CCC</strong></h1>
+                <h1 style="text-align: center; font-family: Montserrat"><strong>Covid Cure Center</strong></h1>
             </td>
         </tr>
 
@@ -77,11 +99,12 @@
                     }
 
                     if( $_SESSION['perfil'] == 'admin') {
+
                         echo  "<li><a href='index.php?option=homepage'>Consultar Dados dos Utilizadores (ID,nome,idade e Perfil)</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Registar Novo Utilizador (Medico/Admin/Invest)</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
+                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admin/Invest)</a></li>";
+                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=10'>Visualizar Usuários </a></li>";
+                        //echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
+                        //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {
@@ -126,6 +149,9 @@
                         break;
                     case 'checklogin' :   include('checklogin.php')   ; break;
                     case 'checkregister': include('checkRegister.php');break;
+                    //ADMIN MENU
+                    case 'registaUser' : include('userForm.php'); break;
+                    case 'fichaUtente' : include('fichaUtente.php'); break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
                 }
             
