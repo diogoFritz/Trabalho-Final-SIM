@@ -15,6 +15,7 @@
             <input type='hidden' value='0' name='chest_pain'>
             <input type='hidden' value='0' name='stroke'>
             <input type='hidden' value='0' name='diabetes'>
+            
             <input type="checkbox" name="symptoms_progressed" value=1 > - Os seus sintomas progrediram?
             <br>
             <input type="checkbox" name="travel_history" value=1> - Viajou para algum país infetado?

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid19 - SYSTEM</title>
-</head>
+
 <body>
     <h1>Administração  </h1>
     
@@ -53,8 +47,6 @@
        
        <br>
         
-        
-
         <input type="submit">
     </form>
 
@@ -76,4 +68,3 @@
     </form>
 
 </body>
-</html>

@@ -115,6 +115,7 @@
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'paciente') {
+                        echo  "<li><a href='index.php?option=dadosPaciente'>Inserir/Alterar Dados Pessoais</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                         echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
@@ -143,6 +144,9 @@
                         break;
                     case 'checklogin' :   include('checklogin.php')   ; break;
                     case 'checkregister': include('checkRegister.php');break;
+                    case 'checkPersonalData': include('checkPersonaldata.php'); break;
+                    //PACIENTE MENU
+                    case 'dadosPaciente' : include('dadosPessoais.php');break;
                     //ADMIN MENU
                     case 'registaUser' : include('userForm.php'); break;
                     case 'fichaUtente' : include('fichaUtente.php'); break;
