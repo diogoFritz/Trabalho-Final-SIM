@@ -96,8 +96,7 @@
 
                     if( $_SESSION['perfil'] == 'admin') {
                         echo  "<li><a href='index.php?option=tabela&page=1&pageSize=5'>Consultar Dados dos Utilizadores</a></li>";
-                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admins/Invest)</a></li>";
-                        
+                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admins/Invest)</a></li>";  
                         //echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
                         //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";

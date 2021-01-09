@@ -13,8 +13,6 @@ $result = mysqli_query ($connect ,$sql)
 or die('The query failed: ' . mysqli_error($connect));
 $number = mysqli_num_rows($result); //if returns 1, then is a valid user
 
-
-
 //$result2 = $connect -> query($sql);
 
 // Associative array
@@ -26,6 +24,7 @@ if($number) {
     $_SESSION['authuser']=1;
     $_SESSION['username']= $username;
     $_SESSION['perfil']= $row['perfil'];
+    
     echo "Autenticação correta.";
     header("Refresh:0; url=index.php");
 }
