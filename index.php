@@ -136,6 +136,7 @@
                     case 'tabela' : 
                         if($_SESSION['authuser'] == 1) {
                             echo "Welcome ".$_SESSION['username'];
+                            if($_SESSION['username']== paciente) echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
                             include('tabela.php'); 
                         }
                         else {
