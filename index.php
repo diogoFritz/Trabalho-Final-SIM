@@ -111,7 +111,7 @@
                     }
                     if( $_SESSION['perfil'] == 'investigador') {
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Investigador</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Consultar Dados anónimos e/ou Gráficos</a></li>";
+                        echo  "<li><a href='index.php?option=data_analysis&page=1&pageSize=5'>Consultar Dados anónimos e/ou Gráficos</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'paciente') {
@@ -152,6 +152,7 @@
                     case 'fichaUtente' : include('fichaUtente.php'); break;
                     case 'consulta'    : include('medicalReport.php');break;
                     case 'diagnostico' : include('diagnostico.php');break;
+                    case 'data_analysis':include('data_analysis.php');break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
                 }
             
