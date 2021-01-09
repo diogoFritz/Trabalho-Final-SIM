@@ -1,4 +1,4 @@
-<form action="index.php?option=checkregister" method="POST">
+<form action="index.php?option=checkregister" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -13,6 +13,11 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" id="psw" required>
 
+    <label for="idade"><b>Idade</b></label>
+    <input type="text" placeholder="Inserir idade" name="idade" id="idade" >
+
+    <input type="file" name="myimage">
+    
     <input type = "hidden" name = "perfil" value = "paciente" />
 
     <hr>

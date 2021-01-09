@@ -88,10 +88,6 @@
                     echo  "<li><a href='index.php?option=homepage'>Homepage</a></li>";
                     
 
-                    if( $_SESSION['authuser'] == 1){
-                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=10'>Tabelas</a></li>";
-                        
-                    }
                     if( $_SESSION['perfil'] == 'Guest') {
                         echo  "<li><a href='index.php?option=signin'>Sign In</a></li>";
                         echo  "<li><a href='index.php?option=register'>Registar Utente</a></li>";
@@ -99,16 +95,15 @@
                     }
 
                     if( $_SESSION['perfil'] == 'admin') {
-
-                        echo  "<li><a href='index.php?option=homepage'>Consultar Dados dos Utilizadores (ID,nome,idade e Perfil)</a></li>";
-                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admin/Invest)</a></li>";
-                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=10'>Visualizar Usuários </a></li>";
+                        echo  "<li><a href='index.php?option=tabela&page=1&pageSize=5'>Consultar Dados dos Utilizadores</a></li>";
+                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admins/Invest)</a></li>";
+                        
                         //echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
                         //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {
-                        echo  "<li><a href='index.php?option=homepage'>Consultar Dados dos Utilizadores (ID,nome,idade e Perfil)</a></li>";
+                        
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";
                         echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
