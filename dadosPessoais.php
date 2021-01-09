@@ -42,6 +42,7 @@
        <input type = "radio" name = "alergias" value = "S" > Sim
        <input type = "radio" name = "alergias" value = "N" checked> Não
         <br>
+        
 
         <input type="submit">
     </form>
