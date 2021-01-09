@@ -24,7 +24,7 @@ $min = $max - ($pageSize - 1);
 
 $connect = mysqli_connect('localhost', 'root', '','covid')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$sql3 = "SELECT * FROM usuarios WHERE (id >= $min and id <=$max)";
+$sql3 = "SELECT * FROM pacientes WHERE (paciente_id >= $min and paciente_id <=$max)";
 $result = mysqli_query($connect ,$sql3)
 or die('The query failed: ' . mysqli_error($connect));
 
@@ -32,20 +32,22 @@ or die('The query failed: ' . mysqli_error($connect));
 
 <table class="tabela">
     <tr>
-        <th>ID</th>
-        <th>USERNAME</th>
-        <th>PERFIL</th>
-        <th>IDADE</th>   
+        <th>SEXO</th>
+        <th>IDADE</th>
+        <th>ALERGIAS</th>   
+        <th>RESULTADO</th>  
     </tr>
 
     <?php
     while($row = mysqli_fetch_array($result)){
         
         echo "<tr>";
-        //echo "<td>".$row['sexo']."</td>";
-        echo "<td>".$row['username']."</td>";
-        echo "<td>".$row['perfil']."</td>";
+        echo "<td>".$row['sexo']."</td>";
         echo "<td>".$row['idade']."</td>";
+        echo "<td>".$row['alergias']."</td>";
+        
+        if($row['resultado']== NULL) echo "<td>Sem avaliacao</td>";
+        else echo "<td>".$row['resultado']."</td>";
         echo "</tr>";   
     }
     ?>

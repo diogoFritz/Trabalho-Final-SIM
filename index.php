@@ -119,8 +119,7 @@
                         echo  "<li><a href='index.php?option=dadosPaciente'>Inserir/Alterar Dados Pessoais</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
-                        if($_SESSION['consulta'])
-                            echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
+                        echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
                     }
   
                     ?>
