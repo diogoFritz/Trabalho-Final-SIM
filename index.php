@@ -106,7 +106,7 @@
                         
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";
-                        echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
+                        
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
 
                     }
@@ -116,9 +116,9 @@
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'paciente') {
-                        echo  "<li><a href='index.php?option=homepage'>Consulta Médica</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
+                        echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
                     }
   
                     ?>

@@ -1,11 +1,12 @@
+
 <body>
         <h1>Formulário Médico</h1>
         <form action="index.php?option=diagnostico" method="POST">
             
-
-            <h2>Ola! Bem vindo à consulta que lhe irá informar qual o seu grau de risco de ter COVID</h2>
-            <h3>Terá de selecionar as seguintes opções para que o nosso classificador dar o resultado (selecionar em caso afirmativo)</h3>
-
+            <?php
+            echo "<h2>Ola " .$_SESSION['nome']."! Bem vindo à consulta que lhe irá informar qual o seu grau de risco de ter COVID</h2>";
+            echo "<h3>Terá de selecionar as seguintes opções para que o nosso classificador dar o resultado (selecionar em caso afirmativo)</h3>";
+            ?>
             <input type='hidden' value='0' name='symptoms_progressed'>
             <input type='hidden' value='0' name='travel_history'>
             <input type='hidden' value='0' name='drowsiness'>

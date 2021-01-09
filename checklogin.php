@@ -25,7 +25,10 @@ printf("%s , %s\n",$row['perfil'],$row['username']);
 if($number) {
     $_SESSION['authuser']=1;
     $_SESSION['username']= $username;
+    $_SESSION['nome']=$row['nome'];
     $_SESSION['perfil']= $row['perfil'];
+    $_SESSION['idade']=$row['idade'];
+    $_SESSION['user_id']=$row['id'];
     echo "Autenticação correta.";
     header("Refresh:0; url=index.php");
 }
