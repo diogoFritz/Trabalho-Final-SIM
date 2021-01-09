@@ -6,9 +6,6 @@
     
         <h2>Editar conta</h2>
         <hr>
-       <label>Nome:</label> <br>
-       <input type = "text" name = "nome" value = "Artur Soares Dia" > 
-       <br>
 
        <label>Sexo:</label> <br>
        <input type = "radio" name = "sexo" value = "M"> Masculino
@@ -34,7 +31,7 @@
        <label>Email:</label> <br> 
        <input type="email" name="email" value="arturSoares@gmail.com"> <br>
        <label>NIF:</label> <br> 
-       <input type="text" name="nif" value="12005000647"> <br>
+       <input type="text" name="nif" value="120050"> <br>
        <br>
 
        <label>Cartao Saude:</label> <br>

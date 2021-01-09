@@ -1,6 +1,5 @@
 <?php
     $user_id = $_SESSION['user_id'];
-    $name = $_POST['nome'];
     $idade = $_POST['idade'];
     $morada = $_POST['morada'];
     $localidade = $_POST['localidade'];
@@ -19,7 +18,7 @@
     $result = mysqli_query($connect ,$sql);
     $id = mysqli_num_rows($result);
     $id = $id+1;
-    $sql = "INSERT INTO usuarios (PACIENTE_ID,USER_ID,NOME,MORADA,LOCALIDADE,CONTACTO,EMAIL,SEXO,NIF,CARTAO_SAUDE,ALERGIAS) VALUES (".$id.",".$user_id.",'".$nome."','".$morada."','".$localidade."',".$contacto.",'".$email."','".$sexo."',".$nif.",'".$cartao."','".$alergias."')";
+    $sql = "INSERT INTO pacientes (paciente_id,USER_ID,IDADE,MORADA,LOCALIDADE,CONTACTO,EMAIL,SEXO,NIF,CARTAO_SAUDE,ALERGIAS) VALUES (".$id.",".$user_id.",'".$idade."','".$morada."','".$localidade."',".$contacto.",'".$email."','".$sexo."',".$nif.",'".$cartao."','".$alergias."')";
 
     if (mysqli_query($connect, $sql)) {
         echo "Added new record created successfully in pacientes !";
