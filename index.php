@@ -111,7 +111,7 @@
                         echo  "<li><a href='index.php?option=homepage'>Consultar Dados dos Utilizadores (ID,nome,idade e Perfil)</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Registo da consulta Médica</a></li>";
+                        echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
 
                     }
@@ -152,6 +152,8 @@
                     //ADMIN MENU
                     case 'registaUser' : include('userForm.php'); break;
                     case 'fichaUtente' : include('fichaUtente.php'); break;
+                    case 'consulta'    : include('medicalReport.php');break;
+                    case 'diagnostico' : include('diagnostico.php');break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
                 }
             
