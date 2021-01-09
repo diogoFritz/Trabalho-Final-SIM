@@ -50,6 +50,7 @@
             $_SESSION['authuser']=0;
            // $_SESSION['authuser'];
         }
+
         if(isset($_SESSION['perfil']) == false ) {
             $_SESSION['perfil']="Guest";
             $perfil = $_SESSION['perfil'];  
@@ -118,7 +119,8 @@
                         echo  "<li><a href='index.php?option=dadosPaciente'>Inserir/Alterar Dados Pessoais</a></li>";
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
-                        echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
+                        if($_SESSION['consulta'])
+                            echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
                     }
   
                     ?>
@@ -151,7 +153,15 @@
                     //ADMIN MENU
                     case 'registaUser' : include('userForm.php'); break;
                     case 'fichaUtente' : include('fichaUtente.php'); break;
-                    case 'consulta'    : include('medicalReport.php');break;
+                    case 'consulta'    : 
+                        if($_SESSION['consulta'] == 1) {
+                            echo "Welcome ".$_SESSION['username'];
+                            include('medicalReport.php'); 
+                        }
+                        else {
+                            echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
+                        }
+                        break;
                     case 'diagnostico' : include('diagnostico.php');break;
                     case 'data_analysis':include('data_analysis.php');break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;

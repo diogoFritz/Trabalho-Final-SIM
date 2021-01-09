@@ -23,17 +23,17 @@
        <input type = "password" name = "password" value = "12345" > 
        <br>
        <label>Morada:</label> <br>
-       <input type = "text" name = "address" value = "Rua dos Pentasilgos" > 
+       <input type = "text" name = "address" > 
        <br>
        <label>Contacto:</label> <br>
-       <input type = "text" name = "phone" value = "91789456" > 
+       <input type = "text" name = "phone" > 
        <br>
        <label>Imagem:</label> <br> 
        <input type="file" id="image" name="photo" value="C:\wamp64\www\COVID\avatar.png"> <br>
 
        <h3>Dados Pessoais Este vai para pacientes</h3>
        <label>Idade:</label>
-       <input type = "text" name = "age" value = "45" >  <br>
+       <input type = "text" name = "age" >  <br>
 
        <label>Sexo:</label> <br>
        <input type = "radio" name = "sex" value = "male"> Masculino
@@ -41,9 +41,9 @@
        <input type = "radio" name = "sex" value = "other" checked=True> Outro
        <br>
        <label>Email:</label> <br> 
-       <input type="email" name="email" value="arturSoares@gmail.com"> <br>
+       <input type="email" name="email" > <br>
        <label>NIF:</label> <br> 
-       <input type="text" name="nif" value="12005000647"> <br>
+       <input type="text" name="nif"> <br>
        
        <br>
         

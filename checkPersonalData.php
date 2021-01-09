@@ -9,6 +9,8 @@
     $nif = $_POST['nif'];
     $cartao = $_POST['cartao'];
     $alergias = $_POST['alergias'];
+
+
  
 
     // Dados do Paciente
@@ -26,7 +28,6 @@
 
     
     if($check){
-       
         $sql = "UPDATE pacientes SET idade=$idade,morada='$morada',localidade='$localidade',contacto=$contacto,email='$email',sexo='$sexo',NIF=$nif,cartao_saude='$cartao',alergias='$alergias' where user_id = $user_id";
         echo "LISTA ATUALIZADA";
     }
@@ -34,10 +35,12 @@
     else {
         echo "LISTA CRIADA";
         $sql = "INSERT INTO pacientes (paciente_id,USER_ID,IDADE,MORADA,LOCALIDADE,CONTACTO,EMAIL,SEXO,NIF,CARTAO_SAUDE,ALERGIAS) VALUES (".$id.",".$user_id.",'".$idade."','".$morada."','".$localidade."',".$contacto.",'".$email."','".$sexo."',".$nif.",'".$cartao."','".$alergias."')";
+        //Permite ir pra consulta
     }
         
     if (mysqli_query($connect, $sql)) {
         echo "record created successfully in pacientes !";
+        
     } else {
         echo "Error: ".$sql." ".mysqli_error($connect);
     }

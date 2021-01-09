@@ -1,7 +1,7 @@
 <?php
 
 if ($_SESSION['perfil'] == 'Guest'){
-    echo "<h1>Welcome Guest Perfil ".$_SESSION['perfil']." </h1>";
+    echo "<h1>Welcome Perfil ".$_SESSION['perfil']." </h1>";
     echo '<img src="assets\donald_dance.gif">';
 
 }
