@@ -5,10 +5,9 @@
     $user = $_POST['user'];
     $pass = md5($_POST['pass']);
     $perfil = $_POST['perfil'];
-    $idade = $_POST['idade'];
+   
     
   
-
     // Dados do Paciente
 
     $connect = mysqli_connect('localhost', 'root', '','covid')
@@ -37,7 +36,7 @@
         $result = mysqli_query($connect ,$sql);
         $id = mysqli_num_rows($result);
         $id = $id+1;
-        $sql = "INSERT INTO usuarios (ID,NOME,USERNAME,PASSWORD,PERFIL,IDADE) VALUES ('".$id."','".$name."','".$user."','".$pass."','".$perfil."',".$idade.")";
+        $sql = "INSERT INTO usuarios (ID,NOME,USERNAME,PASSWORD,PERFIL) VALUES ('".$id."','".$name."','".$user."','".$pass."','".$perfil."')";
 
         if (mysqli_query($connect, $sql)) {
             echo "New record created successfully in usuarios !";
