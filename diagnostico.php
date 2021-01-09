@@ -1,5 +1,4 @@
 <?php
-$_SESSION['idade']=30 //POR A IDADE DO UTENTE QUE TEM A SESSAO INICIADA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 $SYMPTOMS = $_POST['symptoms_progressed'];
 $TRAVEL_H = $_POST['travel_history'];
@@ -11,6 +10,7 @@ $STROKE_O = $_POST['stroke'];
 $DIABETES = $_POST['diabetes'];
 $AGE = $_SESSION['idade'];
 $class = 0;
+$id = $_SESSION['user_id'];
 
 
 /*Terminal Node 1*/
@@ -82,5 +82,12 @@ if( $DIABETES == 0 &&$STROKE_O == 0 &&$PAIN == 0 &&$TRAVEL_H == 0 )
 if($class == 0) print("Low risk");
 if($class == 1) print("Medium risk");
 if($class == 2) print("High risk");
+
+$connect = mysqli_connect('localhost', 'root', '','covid')
+or die('Error connecting to the server: ' . mysqli_error($connect));
+$sql = "UPDATE `usuarios` SET `Resultado`=($class) WHERE (id=$id)"; 
+$result = mysqli_query($connect ,$sql)
+or die('The query failed: ' . mysqli_error($connect));
+mysqli_close($connect);
 
 ?>
