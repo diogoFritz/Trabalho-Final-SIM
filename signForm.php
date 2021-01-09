@@ -13,9 +13,6 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" id="psw" required>
 
-    <label for="idade"><b>Idade</b></label>
-    <input type="text" placeholder="Inserir idade" name="idade" id="idade" >
-
     <input type="file" name="myimage">
     
     <input type = "hidden" name = "perfil" value = "paciente" />

@@ -105,8 +105,7 @@
                     if( $_SESSION['perfil'] == 'medico') {
                         
                         echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";
-                        
+                        echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";              
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
 
                     }
