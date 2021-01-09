@@ -42,7 +42,7 @@ or die('The query failed: ' . mysqli_error($connect));
     while($row = mysqli_fetch_array($result)){
         
         echo "<tr>";
-        echo "<td>".$row['sexo']."</td>";
+        //echo "<td>".$row['sexo']."</td>";
         echo "<td>".$row['username']."</td>";
         echo "<td>".$row['perfil']."</td>";
         echo "<td>".$row['idade']."</td>";

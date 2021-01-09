@@ -85,7 +85,7 @@ if($class == 2) print("High risk");
 
 $connect = mysqli_connect('localhost', 'root', '','covid')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-$sql = "UPDATE `usuarios` SET `Resultado`=($class) WHERE (id=$id)"; 
+$sql = "UPDATE `pacientes` SET `resultado`=($class) WHERE (user_id=$id)"; 
 $result = mysqli_query($connect ,$sql)
 or die('The query failed: ' . mysqli_error($connect));
 mysqli_close($connect);
