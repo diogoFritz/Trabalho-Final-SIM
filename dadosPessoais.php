@@ -42,7 +42,21 @@
        <input type = "radio" name = "alergias" value = "S" > Sim
        <input type = "radio" name = "alergias" value = "N" checked> Não
         <br>
-        
+
+        <?php
+            /*$connect = mysqli_connect('localhost', 'root', '','covid')
+            or die('Error connecting to the server: ' . mysqli_error($connect));
+            $sql3 = "SELECT * FROM medicos ";
+            $result = mysqli_query($connect ,$sql3)
+            or die('The query failed: ' . mysqli_error($connect));
+
+            echo <input list="doctors">
+            echo <datalist id="doctors">
+            while($row = mysqli_fetch_array($result)){
+            <option value=$row['nome']> 
+            }
+            </datalist>*/
+        ?>        
 
         <input type="submit">
     </form>

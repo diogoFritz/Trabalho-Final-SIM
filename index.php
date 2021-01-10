@@ -111,7 +111,7 @@
                     }
                     if( $_SESSION['perfil'] == 'investigador') {
                         echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Investigador</a></li>";
-                        echo  "<li><a href='index.php?option=data_analysis&page=1&pageSize=5'>Consultar Dados anónimos e/ou Gráficos</a></li>";
+                        echo  "<li><a href='index.php?option=data_analysis&page=1&pageSize=10'>Consultar Dados anónimos e/ou Gráficos</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'paciente') {
