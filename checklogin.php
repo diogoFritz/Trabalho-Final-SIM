@@ -17,7 +17,7 @@ $number = mysqli_num_rows($result); //if returns 1, then is a valid user
 
 // Associative array
 $row = $result -> fetch_assoc();
-printf("%s , %s\n",$row['perfil'],$row['username']);
+//printf("%s , %s\n",$row['perfil'],$row['username']);
 
 
 if($number) {
