@@ -7,36 +7,6 @@
 
 </head>
 <body>
-
-    <style>
-        html{
-            margin: 0;
-            padding:0;
-        }
-
-        .inline {
-            display: inline;
-        }
-
-        .link-button {
-            background: none;
-            border: none;
-            color: blue;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 1em;
-            font-family: serif;
-        }
-
-        .link-button:focus {
-         outline: none;
-        }
-
-        .link-button:active {
-            color:red;
-        }
-
-    </style>
     <?php 
         session_start();
         
@@ -94,7 +64,7 @@
                         echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador </a></li>";  
                         echo  "<li><a href='index.php?option=alteraUser'>Alterar Dados do Utilizador </a></li>";
                         echo  "<li><a href='index.php?option=fichaAdmin'>Visualizar ficha do Administrador</a></li>";   
-                        //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
+                        echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {
@@ -129,9 +99,7 @@
                     case 'signin' : include('loginForm.php'); break;
                     case 'register': include('signForm.php'); break;
                     case 'tabela' : 
-                        if($_SESSION['authuser'] == 1) {
-                            echo "Welcome ".$_SESSION['username'];
-                            if($_SESSION['username']== paciente) echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
+                        if($_SESSION['authuser'] == 1) { 
                             include('tabela.php'); 
                         }
                         else {
@@ -172,5 +140,33 @@
 
 </body>
 
+<style>
+        html{
+            margin: 0;
+            padding:0;
+        }
 
+        .inline {
+            display: inline;
+        }
+
+        .link-button {
+            background: none;
+            border: none;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: serif;
+        }
+
+        .link-button:focus {
+         outline: none;
+        }
+
+        .link-button:active {
+            color:red;
+        }
+
+    </style>
 </html>

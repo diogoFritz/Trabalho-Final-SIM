@@ -24,10 +24,11 @@ $min = $max - ($pageSize - 1);
 
 $connect = mysqli_connect('localhost', 'root', '','covid')
 or die('Error connecting to the server: ' . mysqli_error($connect));
-//$sql = "SELECT user_id,USERNAME,PASSWORD FROM usuarios WHERE (user_id >= $min and user_id <=$max)";
+
+
 //$sql2 = "SELECT usuarios.user_id as id, pacientes.user_id as pacient_id, nome , idade , perfil FROM usuarios left join pacientes on usuarios.user_id = pacientes.user_id" ;
-$sql3 = "SELECT * FROM usuarios WHERE (id >= $min and id <=$max)";
-$result = mysqli_query($connect ,$sql3)
+$sql = "SELECT * FROM usuarios WHERE (id >= $min and id <=$max)";
+$result = mysqli_query($connect ,$sql)
 or die('The query failed: ' . mysqli_error($connect));
 //$resultados = mysqli_num_rows($result); // numero de resultados para optimizar numero de páginas
 
@@ -36,11 +37,12 @@ or die('The query failed: ' . mysqli_error($connect));
 <table class="tabela">
     <tr>
         <th>ID</th>
-        <th>USERNAME</th>
-        <th>PERFIL</th>
-        <th>IDADE</th>   
+        <th>Nome</th>
+        <th>Username</th>
+        <th>Perfil</th>
+        <th>Data de criação</th>
+        
     </tr>
-
     <?php
     // 1ºoption $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     // 2ºoption while($row = $result -> fetch_assoc())
@@ -48,9 +50,10 @@ or die('The query failed: ' . mysqli_error($connect));
         
         echo "<tr>";
         echo "<td>".$row['id']."</td>";
+        echo "<td>".$row['nome']."</td>";
         echo "<td>".$row['username']."</td>";
         echo "<td>".$row['perfil']."</td>";
-        echo "<td>".$row['idade']."</td>";
+        echo "<td>".$row['creation_date']."</td>";
         echo "</tr>";   
     }
     ?>
