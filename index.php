@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid Rave Party</title>
+    <title>Covid Center</title>
 
 </head>
 <body>
-
-    <!--
-    Criar 4 perfis: medico/admin/investigador/paciente
-    evitar usar o GET, usar post 
-    criar bem vindo para cada perfil
-    -->
 
     <style>
         html{
@@ -97,8 +91,8 @@
 
                     if( $_SESSION['perfil'] == 'admin') {
                         echo  "<li><a href='index.php?option=tabela&page=1&pageSize=5'>Consultar Dados dos Utilizadores</a></li>";
-                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador (Medico/Admins/Invest)</a></li>";  
-                        //echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utilizador (Medico/Admin/Invest)</a></li>";
+                        echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador </a></li>";  
+                        echo  "<li><a href='index.php?option=alteraUser'>Alterar Dados do Utilizador </a></li>";
                         //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
@@ -147,10 +141,11 @@
                     case 'checklogin' :   include('checklogin.php')   ; break;
                     case 'checkregister': include('checkRegister.php');break;
                     case 'checkPersonalData': include('checkPersonaldata.php'); break;
+                    case 'checkUserAdmin': include('checkUserAdmin.php');break;
                     //PACIENTE MENU
                     case 'dadosPaciente' : include('dadosPessoais.php');break;
                     //ADMIN MENU
-                    case 'registaUser' : include('userForm.php'); break;
+                    case 'registaUser' : include('admin_ficha.php'); break;
                     case 'fichaUtente' : include('fichaUtente.php'); break;
                     case 'consulta'    : 
                         if($_SESSION['consulta'] == 1) {

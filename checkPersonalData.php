@@ -10,9 +10,6 @@
     $cartao = $_POST['cartao'];
     $alergias = $_POST['alergias'];
 
-
- 
-
     // Dados do Paciente
     $connect = mysqli_connect('localhost', 'root', '','covid')
     or die('Error connecting to the server: ' . mysqli_error($connect));
