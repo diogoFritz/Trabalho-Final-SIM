@@ -24,8 +24,9 @@
        <input type = "text" name = "contacto"  > 
        <br>
        
-       <label>Idade:</label>
-       <input type = "text" name = "idade"  >  <br>
+       <label>Idade:</label><br>
+       <input type = "text" name = "idade"  >  
+       <br>
 
        <label>Email:</label> <br> 
        <input type="email" name="email" > <br>

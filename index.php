@@ -93,13 +93,14 @@
                         echo  "<li><a href='index.php?option=tabela&page=1&pageSize=5'>Consultar Dados dos Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador </a></li>";  
                         echo  "<li><a href='index.php?option=alteraUser'>Alterar Dados do Utilizador </a></li>";
+                        echo  "<li><a href='index.php?option=fichaAdmin'>Visualizar ficha do Administrador</a></li>";   
                         //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {
                         
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar/Alterar ficha do Utente</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Médico</a></li>";              
+                        echo  "<li><a href='index.php?option=fichaDosSeusUtentes'>Visualizar ficha dos seus Utentes</a></li>";
+                        echo  "<li><a href='index.php?option=fichaMedico'>Visualizar ficha do Médico</a></li>";              
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
 
                     }
@@ -151,6 +152,9 @@
                     case 'diagnostico' : include('diagnostico.php');break;
                     case 'data_analysis':include('data_analysis.php');break;
                     case 'fichaInvestigador': include('fichaInvestigador.php');break;
+                    case 'fichaMedico': include('fichaMedico.php');break;
+                    case 'fichaAdmin': include('fichaAdmin.php');break;
+                    case 'fichaDosSeusUtentes': include('fichaDosSeusUtentes.php');break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
                 }
             
