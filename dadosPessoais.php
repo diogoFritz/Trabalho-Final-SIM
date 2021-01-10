@@ -10,28 +10,27 @@
        <label>Sexo:</label> <br>
        <input type = "radio" name = "sexo" value = "M"> Masculino
        <input type = "radio" name = "sexo" value = "F"> Feminino
-       <input type = "radio" name = "sexo" value = "N" checked=True> Outro
        <br>
 
        <label>Morada:</label> <br>
-       <input type = "text" name = "morada" value = "Rua dos Pentasilgos" > 
+       <input type = "text" name = "morada" > 
        <br>
 
        <label>Localidade:</label> <br>
-       <input type = "text" name = "localidade" value = "Lisboa" > 
+       <input type = "text" name = "localidade"  > 
        <br>
 
        <label>Contacto:</label> <br>
-       <input type = "text" name = "contacto" value = "91789456" > 
+       <input type = "text" name = "contacto"  > 
        <br>
        
        <label>Idade:</label>
-       <input type = "text" name = "idade" value = "45" >  <br>
+       <input type = "text" name = "idade"  >  <br>
 
        <label>Email:</label> <br> 
-       <input type="email" name="email" value="arturSoares@gmail.com"> <br>
+       <input type="email" name="email" > <br>
        <label>NIF:</label> <br> 
-       <input type="text" name="nif" value="120050"> <br>
+       <input type="text" name="nif"> <br>
        <br>
 
        <label>Cartao Saude:</label> <br>
