@@ -79,9 +79,9 @@ if( $DIABETES == 0 &&$STROKE_O == 0 &&$PAIN == 0 &&$TRAVEL_H == 0 )
      $class = 0;
 }
 
-if($class == 0) print("Low risk");
-if($class == 1) print("Medium risk");
-if($class == 2) print("High risk");
+if($class == 0) print("Low risk. Como o risco é reduzido o médico não lhe irá enviar a prescrição");
+if($class == 1) print("Medium risk!Irá receber a prescrição para o teste dentro dos proximos dias(consulte regularmente o seu email).");
+if($class == 2) print("High risk! Irá receber a prescrição para o teste dentro dos proximos dias (consulte regularmente o seu email e contacte a linha de saúde 24).");
 
 $connect = mysqli_connect('localhost', 'root', '','covid')
 or die('Error connecting to the server: ' . mysqli_error($connect));

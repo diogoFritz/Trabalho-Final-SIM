@@ -39,7 +39,7 @@
         $sql = "INSERT INTO usuarios (ID,NOME,USERNAME,PASSWORD,PERFIL) VALUES ('".$id."','".$name."','".$user."','".$pass."','".$perfil."')";
 
         if (mysqli_query($connect, $sql)) {
-            echo "New record created successfully in usuarios !";
+            echo "Conta criada com sucesso!";
         } else {
            echo "Error: ".$sql." ".mysqli_error($connect);
         }

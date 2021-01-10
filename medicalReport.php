@@ -1,9 +1,28 @@
 
 <body>
+        
+        <?php
+        $user_id=$_SESSION['user_id'];
+        $connect = mysqli_connect('localhost', 'root', '','covid')
+        or die('Error connecting to the server: ' . mysqli_error($connect));
+        $sql3 = "SELECT * FROM pacientes WHERE user_id='$user_id'";
+        $result = mysqli_query($connect ,$sql3)
+        or die('The query failed: ' . mysqli_error($connect));
+        $aux=0;
+        while ($row= mysqli_fetch_array($result)) 
+        { 
+            $aux=$aux+1;
+            
+        } 
+
+        if($aux==0) header("Refresh:0; url=index.php");
+        ?>
+        
         <h1>Formulário Médico</h1>
         <form action="index.php?option=diagnostico" method="POST">
             
             <?php
+
             echo "<h2>Ola " .$_SESSION['nome']."! Bem vindo à consulta que lhe irá informar qual o seu grau de risco de ter COVID</h2>";
             echo "<h3>Terá de selecionar as seguintes opções para que o nosso classificador dar o resultado (selecionar em caso afirmativo)</h3>";
             ?>

@@ -33,7 +33,7 @@
         else echo "<center><b>Cartao de Saude:</b> Nao</center><br><br>";
         if($row['alergias']== "S") echo "<center><b>Alergias:</b> Sim</center><br><br>";
         else echo "<center><b>Alergias:</b> Nao</center><br><br>";
-        
+        echo "<center><b>Medico:</b>Dr.".$row['medico']."</center><br><br>" ;
         
     }
     else {
