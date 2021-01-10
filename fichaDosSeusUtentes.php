@@ -2,10 +2,10 @@
 
 
 
-if(isset($_POST['utente'])==false){
+if(isset($_POST['utente1'])==false){
     $utente = 0;
 }
-else $utente=$_POST['utente'];
+else $utente=$_POST['utente1'];
 
 
 
@@ -18,11 +18,13 @@ $result = mysqli_query($connect ,$sql3)
 or die('The query failed: ' . mysqli_error($connect));
 
 echo "<form action='index.php?option=fichaDosSeusUtentes' method='POST'>";
-
+$aux=0;
 echo "Escolha o Utente que pretende ver a ficha.<br>";
-echo "<input list='utente' name='utente'>";
+echo "<input list='utente' name='utente1'>";
 echo "<datalist id='utente'>";
 while($row = mysqli_fetch_array($result)){
+    $aux=$aux+1;
+    print($aux);
     $pt=$row['nome'];
     echo "<option value='$pt'>" ;
 }

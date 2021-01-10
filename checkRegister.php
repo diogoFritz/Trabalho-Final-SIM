@@ -5,7 +5,7 @@
     $user = $_POST['user'];
     $pass = md5($_POST['pass']);
     $perfil = $_POST['perfil'];
-   
+    $image = $_FILES['image'];//['name'];
     
   
     // Dados do Paciente
@@ -18,16 +18,17 @@
     or die('The query failed: ' . mysqli_error($connect));
     $resultados = mysqli_num_rows($result); // numero de resultados para optimizar numero de páginas
     //print_r($result);
-/*
-    //inserir imagem na base de dados
-      $imagename=$_FILES["myimage"]["name"]; 
-      //Get the content of the image and then add slashes to it 
-      $imagetmp=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
-      //Insert the image name and image content in image_table
-      $sql2="INSERT INTO usuarios (foto) VALUES($imagename)";
-      mysqli_query($connect,$sql2);
-*/
-   
+
+ //inserir foto na base de dados metodo 1
+    
+    //$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    
+    $imgData = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+    //$imageProperties = getimageSize($_FILES['image']['tmp_name']);
+    //print(getImageType($image));
+    //print($imgData);
+    //print($imageProperties);
+
     if ($resultados)
         echo "Username ja existe. Tente Outra vez.";
     else {
@@ -36,7 +37,7 @@
         $result = mysqli_query($connect ,$sql);
         $id = mysqli_num_rows($result);
         $id = $id+1;
-        $sql = "INSERT INTO usuarios (ID,NOME,USERNAME,PASSWORD,PERFIL) VALUES ('".$id."','".$name."','".$user."','".$pass."','".$perfil."')";
+        $sql = "INSERT INTO usuarios (ID,NOME,USERNAME,PASSWORD,PERFIL,FOTO) VALUES ('".$id."','".$name."','".$user."','".$pass."','".$perfil."','".$imgData."')";
 
         if (mysqli_query($connect, $sql)) {
             echo "Conta criada com sucesso!";
@@ -45,5 +46,9 @@
         }
 
     }
+    
     mysqli_close($connect);
+
+
 ?>
+

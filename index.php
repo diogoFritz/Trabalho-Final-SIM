@@ -62,9 +62,9 @@
                     if( $_SESSION['perfil'] == 'admin') {
                         echo  "<li><a href='index.php?option=tabela&page=1&pageSize=5'>Consultar Dados dos Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=registaUser'>Registar Novo Utilizador </a></li>";  
-                        echo  "<li><a href='index.php?option=alteraUser'>Alterar Dados do Utilizador </a></li>";
+                        //echo  "<li><a href='index.php?option=alteraUser'>Alterar Dados do Utilizador </a></li>";
                         echo  "<li><a href='index.php?option=fichaAdmin'>Visualizar ficha do Administrador</a></li>";   
-                        echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
+                        //echo  "<li><a href='index.php?option=homepage'>Ativar/Desativar Utilizadores</a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                     }
                     if( $_SESSION['perfil'] == 'medico') {

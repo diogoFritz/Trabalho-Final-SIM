@@ -32,7 +32,7 @@
        <label>Email:</label> <br> 
        <input type="email" name="email" required> <br>
        <label>NIF:</label> <br> 
-       <input type="text" name="nif"required> <br>
+       <input type="text" name="nif" maxlength="9"required> <br>
        <br>
 
        <label>Cartao Saude:</label> <br>

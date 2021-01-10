@@ -42,12 +42,12 @@
 
         
         if (mysqli_query($connect, $sql1)) {
-            echo "New record created successfully in usuarios !";
+            echo "Novo usuario criado!";
         } else {
            echo "Error: ".$sql." ".mysqli_error($connect);
         }
         if (mysqli_query($connect, $sql2)) {
-            echo "New record created successfully in $tabela !";
+            //echo "New record created successfully in $tabela !";
         } else {
            echo "Error: ".$sql2." ".mysqli_error($connect);
         }

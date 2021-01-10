@@ -13,7 +13,7 @@
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" id="psw" required>
 
-    <input type="file" name="image">
+    <input type="file" name="image" required>
     
     <input type = "hidden" name = "perfil" value = "paciente" />
 
