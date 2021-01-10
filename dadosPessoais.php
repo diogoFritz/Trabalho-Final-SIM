@@ -44,18 +44,19 @@
         <br>
 
         <?php
-            /*$connect = mysqli_connect('localhost', 'root', '','covid')
+            $connect = mysqli_connect('localhost', 'root', '','covid')
             or die('Error connecting to the server: ' . mysqli_error($connect));
             $sql3 = "SELECT * FROM medicos ";
             $result = mysqli_query($connect ,$sql3)
             or die('The query failed: ' . mysqli_error($connect));
-
-            echo <input list="doctors">
-            echo <datalist id="doctors">
+            echo "<input list='doctors'>";
+            echo "<datalist id='doctors'>";
             while($row = mysqli_fetch_array($result)){
-            <option value=$row['nome']> 
+                $dr=$row['nome'];
+                echo "<option value='Dr.$dr'>" ;
             }
-            </datalist>*/
+            echo"</datalist>";
+        
         ?>        
 
         <input type="submit">
