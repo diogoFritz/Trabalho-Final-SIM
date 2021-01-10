@@ -66,9 +66,9 @@
 
     <table width=100%>
         <tr>
-            <td><img src="assets\data.png" alt="logo"></td>
+            <td><img src="assets\medical.png" alt="logo"></td>
             <td> 
-                <h1 style="text-align: center; font-family: Montserrat"><strong>Covid Cure Center</strong></h1>
+                <h1 style="text-align: center; font-family: Montserrat"><strong>Covid Test Center</strong></h1>
             </td>
         </tr>
 
