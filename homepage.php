@@ -11,6 +11,12 @@ if ($_SESSION['perfil'] == 'paciente'){
     echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
     echo '<img src="assets\pip_boy4.jpg">';
 }
+
+if ($_SESSION['perfil'] == 'investigador'){
+    echo "<h1>Welcome ".$_SESSION['nome']." Perfil ".$_SESSION['perfil']." </h1>";
+    echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
+    echo '<img src="assets\pip_boy3.jpg">';
+}
     
 
 ?>

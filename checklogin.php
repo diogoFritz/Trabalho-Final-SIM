@@ -25,7 +25,7 @@ if($number) {
     $_SESSION['username']= $username;
     $_SESSION['nome']=$row['nome'];
     $_SESSION['perfil']= $row['perfil'];
-    $_SESSION['idade']=$row['idade'];
+    //$_SESSION['idade']=$row['idade'];
     $_SESSION['user_id']=$row['id'];
     
     echo "Autenticação correta.";

@@ -116,7 +116,7 @@
                     }
                     if( $_SESSION['perfil'] == 'paciente') {
                         echo  "<li><a href='index.php?option=dadosPaciente'>Inserir/Alterar Dados Pessoais</a></li>";
-                        echo  "<li><a href='index.php?option=homepage'>Visualizar ficha do Utente</a></li>";
+                        echo  "<li><a href='index.php?option=fichaPaciente'>Ficha de Paciente </a></li>";
                         echo  "<li><a href='index.php?option=logoff'>Sair </a></li>";
                         echo  "<li><a href='index.php?option=consulta'>Consulta Medica</a></li>";
                     }
@@ -148,18 +148,11 @@
                     case 'checkPersonalData': include('checkPersonaldata.php'); break;
                     //PACIENTE MENU
                     case 'dadosPaciente' : include('dadosPessoais.php');break;
+                    case 'fichaPaciente' : include('fichaPaciente.php');break;
                     //ADMIN MENU
                     case 'registaUser' : include('userForm.php'); break;
                     case 'fichaUtente' : include('fichaUtente.php'); break;
-                    case 'consulta'    : 
-                        if($_SESSION['consulta'] == 1) {
-                            echo "Welcome ".$_SESSION['username'];
-                            include('medicalReport.php'); 
-                        }
-                        else {
-                            echo "Nao se esqueca que antes de fazer a consulta tera de inserir os seus dados pessoais";
-                        }
-                        break;
+                    case 'consulta'    : include('medicalReport.php'); break;
                     case 'diagnostico' : include('diagnostico.php');break;
                     case 'data_analysis':include('data_analysis.php');break;
                     case 'logoff' :  echo "Terminar sessão..."; session_unset(); header("Refresh:0; url=index.php");break;
